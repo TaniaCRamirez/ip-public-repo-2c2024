@@ -1,142 +1,171 @@
+/* Estilo general del cuerpo de la página */
 body {
-    color: #566787;
-    background: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
+    /* Se establece el color del texto (cambiado a negro) */
+    /* color: #566787; */
+    color: #030c0a; /* Cambiado de #566787 a negro */
+    background: #84ca9b; /* Color de fondo gris claro */
+    font-family: 'Roboto', sans-serif; /* Fuente predeterminada */
 }
 
+/* Contenedor principal que hace la tabla adaptable a diferentes tamaños */
 .table-responsive {
-    margin: 30px 0;
+    margin: 30px 0; /* Espaciado superior e inferior de 30px */
 }
 
+/* Contenedor de la tabla, con un fondo blanco y sombra ligera */
 .table-wrapper {
-    min-width: 1000px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    min-width: 1000px; /* Ancho mínimo del contenedor */
+    background: #a84242; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno de 20px */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05); /* Sombra ligera para resaltar */
 }
 
+/* Título de la tabla */
 .table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-    min-width: 100%;
+    padding-bottom: 10px; /* Espaciado inferior de 10px */
+    margin: 0 0 10px; /* Margen inferior de 10px */
+    min-width: 100%; /* El título ocupa todo el ancho */
 }
 
+/* Estilo del texto del título de la tabla */
 .table-title h2 {
-    margin: 8px 0 0;
-    font-size: 22px;
+    margin: 8px 0 0; /* Ajusta el margen del título */
+    font-size: 22px; /* Tamaño de la fuente */
 }
 
+/* Caja de búsqueda dentro de la tabla */
 .search-box {
-    position: relative;
-    float: right;
+    position: relative; /* Posiciona elementos en base al contenedor */
+    float: right; /* La caja se alinea a la derecha */
 }
 
+/* Campo de entrada de texto para la búsqueda */
 .search-box input {
-    height: 34px;
-    border-radius: 20px;
-    padding-left: 35px;
-    border-color: #ddd;
-    box-shadow: none;
+    height: 34px; /* Altura del campo */
+    border-radius: 20px; /* Bordes redondeados */
+    padding-left: 35px; /* Espaciado interno a la izquierda */
+    border-color: #ddd; /* Color del borde */
+    box-shadow: none; /* Sin sombra */
 }
 
+/* Estilo cuando el campo de búsqueda está en foco */
 .search-box input:focus {
-    border-color: #3FBAE4;
+    border-color: #3fe47e; /* Borde azul al seleccionar */
 }
 
+/* Icono de búsqueda dentro del campo */
 .search-box i {
-    color: #a0a5b1;
-    position: absolute;
-    font-size: 19px;
-    top: 8px;
-    left: 10px;
+    color: #a0a5b1; /* Color gris claro */
+    position: absolute; /* Posición relativa al campo */
+    font-size: 19px; /* Tamaño del ícono */
+    top: 8px; /* Desplazamiento vertical */
+    left: 10px; /* Desplazamiento horizontal */
 }
 
+/* Bordes de las celdas de las tablas */
 table.table tr th,
 table.table tr td {
-    border-color: #e9e9e9;
+    border-color: #e9e9e9; /* Color de los bordes */
 }
 
+/* Estilo para las filas impares de la tabla */
 table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fcfcfc;
+    background-color: #fcfcfc; /* Fondo blanco para filas impares */
 }
 
+/* Efecto al pasar el mouse sobre las filas */
 table.table-striped.table-hover tbody tr:hover {
-    background: #f5f5f5;
+    background: #f5f5f5; /* Fondo gris claro al pasar el mouse */
 }
 
+/* Iconos en las cabeceras de la tabla */
 table.table th i {
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
+    font-size: 13px; /* Tamaño pequeño del ícono */
+    margin: 0 5px; /* Espaciado lateral */
+    cursor: pointer; /* Cambia a cursor de mano */
 }
 
+/* Define el ancho de la última columna de la tabla */
 table.table td:last-child {
-    width: 130px;
+    width: 130px; /* Ancho de 130px */
 }
 
+/* Enlaces dentro de las celdas de la tabla */
 table.table td a {
-    color: #a0a5b1;
-    display: inline-block;
-    margin: 0 5px;
+    color: #a0a5b1; /* Color gris claro */
+    display: inline-block; /* Los enlaces están alineados */
+    margin: 0 5px; /* Espaciado lateral */
 }
 
+/* Estilo de los enlaces con la clase 'view' */
 table.table td a.view {
-    color: #03A9F4;
+    color: #03A9F4; /* Azul */
 }
 
+/* Estilo de los enlaces con la clase 'edit' */
 table.table td a.edit {
-    color: #FFC107;
+    color: #FFC107; /* Amarillo */
 }
 
+/* Estilo de los enlaces con la clase 'delete' */
 table.table td a.delete {
-    color: #E34724;
+    color: #E34724; /* Rojo */
 }
 
+/* Iconos dentro de las celdas */
 table.table td i {
-    font-size: 19px;
+    font-size: 19px; /* Tamaño del ícono */
 }
 
+/* Estilos para la barra de paginación */
 .pagination {
-    float: right;
-    margin: 0 0 5px;
+    float: right; /* La barra se alinea a la derecha */
+    margin: 0 0 5px; /* Margen inferior */
 }
 
+/* Botones de la paginación */
 .pagination li a {
-    border: none;
-    font-size: 95%;
-    width: 30px;
-    height: 30px;
-    color: #999;
-    margin: 0 2px;
-    line-height: 30px;
-    border-radius: 30px !important;
-    text-align: center;
-    padding: 0;
+    border: none; /* Sin bordes */
+    font-size: 95%; /* Tamaño reducido */
+    width: 30px; /* Ancho del botón */
+    height: 30px; /* Altura del botón */
+    color: #999; /* Color gris */
+    margin: 0 2px; /* Espaciado lateral */
+    line-height: 30px; /* Altura del texto dentro del botón */
+    border-radius: 30px !important; /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    padding: 0; /* Sin relleno interno */
 }
 
+/* Efecto al pasar el mouse sobre los botones */
 .pagination li a:hover {
-    color: #666;
+    color: #666; /* Color gris más oscuro */
 }
 
+/* Estilo del botón activo en la paginación */
 .pagination li.active a {
-    background: #03A9F4;
+    background: #03A9F4; /* Fondo azul */
 }
 
+/* Efecto hover en el botón activo */
 .pagination li.active a:hover {
-    background: #0397d6;
+    background: #0397d6; /* Azul más oscuro */
 }
 
+/* Iconos deshabilitados en la paginación */
 .pagination li.disabled i {
-    color: #ccc;
+    color: #ccc; /* Color gris claro */
 }
 
+/* Tamaño de los iconos de paginación */
 .pagination li i {
-    font-size: 16px;
-    padding-top: 6px
+    font-size: 16px; /* Tamaño reducido */
+    padding-top: 6px; /* Espaciado superior */
 }
 
+/* Texto de ayuda que indica información sobre los datos */
 .hint-text {
-    float: left;
-    margin-top: 6px;
-    font-size: 95%;
+    float: left; /* El texto se alinea a la izquierda */
+    margin-top: 6px; /* Margen superior */
+    font-size: 95%; /* Tamaño reducido */
 }

@@ -1,9 +1,25 @@
-{% extends 'header.html' %} {% block content %} {% if request.user.is_authenticated %}
+{% extends 'header.html' %} 
+{% load static %} <!-- Carga la biblioteca de etiquetas estáticas -->
+{% block content %} 
+
+{% if request.user.is_authenticated %}
 <h2 class="text-center">Bienvenido {{ user.username | upper }}!</h2>
 {% else %}
 <h2 class="text-center">Bienvenido!</h2>
 {% endif %}
-<p class="text-center">
+
+<!-- Imagen de Rick y Morty -->
+<div class="text-center" style="margin-top: 20px;">
+    
+<!-- Acá me dice donde está ubicada la imagen y su nombre -->
+
+    <img src="{% static 'images/rick_and_morty.jpg' %}" 
+         alt="Rick and Morty" 
+         style="width: 80%; max-width: 800px; border-radius: 10px;">
+</div>
+
+<p class="text-center" style="margin-top: 10px;">
     Mirá las imágenes desde <a href="{% url 'home' %}">este link.</a>
 </p>
+
 {% endblock %}

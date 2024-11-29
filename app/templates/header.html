@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>{% block title %}Buscador Rick & Morty{% endblock %}</title>
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    </head>
     <title>Rick & Morty App - IP 2C2024</title>
     {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %} {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
@@ -11,6 +15,8 @@
 </head>
 
 <body>
+    <audio src="../../static/Audio/rickandmorty.mp3" autoplay>
+    </audio>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Proyecto TP</a>

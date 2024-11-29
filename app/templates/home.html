@@ -1,4 +1,5 @@
-{% extends 'header.html' %} {% block content %}
+{% extends 'header.html' %} 
+{% block content %}
 <main>
     <h1 class="text-center">Buscador Rick & Morty</h1>
 
@@ -32,28 +33,36 @@
         </form>
     </div>
 
+    <!-- Esta sección da un borde de color según el estado del personaje -->
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% if images|length == 0 %}
         <h2 class="text-center">La búsqueda no arrojó resultados...</h2>
         {% else %} {% for img in images %}
         <div class="col">
-            <div class="card mb-3 ms-5" style="max-width: 540px;">
+            <!-- Se agregó el estilo para los bordes según el estado -->
+            <div class="card mb-3 ms-5" style="max-width: 540px;
+                {% if img.status == 'Alive' %} border: 4px solid green; 
+                {% elif img.status == 'Dead' %} border: 4px solid red; 
+                {% else %} border: 4px solid orange; 
+                {% endif %}">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="{{ img.url }}" class="card-img-top" alt="imagen">
                     </div>
 
+                    <!-- Cambio en la lógica para mostrar los estados en castellano -->
                     <div class="col-md-8">
                         <div class="card-body">
                             <h3 class="card-title">{{ img.name }}</h3>
                             <p class="card-text">
                                 <strong>
-                                            {% if true == 'Alive' %} 🟢 {{ img.status }} 
-                                            {% elif true == 'Dead' %} 🔴 {{ img.status }} 
-                                            {% else %} 🟠 {{ img.status }} 
-                                            {% endif %}
-                                        </strong>
+                                    {% if img.status == 'Alive' %} 🟢 Vivo 
+                                    {% elif img.status == 'Dead' %} 🔴 Muerto 
+                                    {% else %} 🟠 Desconocido 
+                                    {% endif %}
+                                </strong>
                             </p>
+                            <!-- Fin del cambio de idioma -->
                             <p class="card-text"><small class="text-body-secondary">Última ubicación: {{ img.last_location }}</small></p>
                             <p class="card-text"><small class="text-body-secondary">Episodio inicial: {{ img.first_seen }}</small></p>
                         </div>
@@ -65,9 +74,12 @@
                                 <input type="hidden" name="url" value="{{ img.url }}">
                                 <input type="hidden" name="status" value="{{ img.status }}">
                                 <input type="hidden" name="last_location" value="{{ img.last_location }}">
-                                <input type="hidden" name="first_seen" value="{{ img.first_seen }}"> {% if img in favourite_list %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> {% else %}
-                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
+                                <input type="hidden" name="first_seen" value="{{ img.first_seen }}"> 
+                                {% if img in favourite_list %}
+                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está en favoritos</button> 
+                                {% else %}
+                                <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> 
+                                {% endif %}
                             </form>
                         </div>
                         {% endif %}
